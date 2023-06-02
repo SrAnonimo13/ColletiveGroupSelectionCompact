@@ -1,0 +1,24 @@
+<h1><%= title %></h1>
+<form>
+  <label for="select-user">Seu nome: </label>
+  <select name="current_username" id="select-user"></select>
+  <br />
+  <br />
+  <% for(let i = 0; i < 5; i++ ) { %>
+  <select 
+    name="favorite-<%= i %>"
+    class="favorite-selection"
+    id="favorite-selection-<%= i %>"
+  ></select>
+  <br />
+  <%}%>
+  <input type="submit" />
+</form>
+
+<script>
+const users = [
+    <% users.forEach(v => {%>
+      {name: "<%= v.name %>", id: "<%= v.id %>"},
+    <% }) %>
+  ]
+</script>
